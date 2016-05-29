@@ -2,6 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
+
 'use strict';
 
 import React, { Component } from 'react';
@@ -15,7 +16,10 @@ import {
 } from 'react-native';
 
 const API_KEY = '7waqfqbprs7pajbz28mqf6vz';
-const API_URL = 'a';
+const API_URL = 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json';
+const PAGE_SIZE = 25;
+const PARAMS = '?apikey=' + API_KEY + '&page_limit=' + PAGE_SIZE;
+const REQUEST_URL = API_URL + PARAMS;
 
 class AndroidProject extends Component {
   constructor(props) {
@@ -35,25 +39,24 @@ class AndroidProject extends Component {
 			.then((response) => response.json())
 			.then((responseData) => {
 				this.setState({
-					dataSource: this.state.dataSoucre.cloneWithRows(responseData.movies),
-						loaded: true
+					dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
+					loaded: true
 			})
 			.done();
 		})
 	}
   render() {
-			if (!this.state.loaded) {
-				return this.renderLoadingView();
-			}
-			return (
+		if (!this.state.loaded) {
+			return this.renderLoadingView();
+		}
+		return (
 			<ListView dataSource={this.state.dataSource} renderRow={this.renderMovie} style={styles.listView} />
-			)
-
+		)
   }
 	renderLoadingView() {
 		return (
 			<View style={styles.container}>
-				<Text>正在加载电影数据...</Text>
+				<Text>正在加载电影数据3...</Text>
 			</View>
 		)
 	}
@@ -70,8 +73,6 @@ class AndroidProject extends Component {
 	}
 }
 
-const REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -83,6 +84,7 @@ const styles = StyleSheet.create({
   thumbnail: {
 		width: 53,
 		height: 81,
+		borderRadius: 10
   },
   rightContainer: {
 		flex: 1,
