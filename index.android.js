@@ -75,11 +75,11 @@ class AndroidProject extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+		flex: 1,
 		flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#F5FCFF',
   },
   thumbnail: {
 		width: 53,
@@ -91,15 +91,15 @@ const styles = StyleSheet.create({
   },
   title: {
 		fontSize: 20,
-	  marginBottom: 8,
-	  textAlign: 'center',
+		marginBottom: 8,
+		textAlign: 'center',
   },
   year: {
 		textAlign: 'center',
   },
 	listView: {
-			paddingTop: 20,
-			backgroundColor: '#f5fcff'
+		paddingTop: 20,
+		backgroundColor: '#f5fcff'
 	}
 });
 
