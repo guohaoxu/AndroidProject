@@ -1,6 +1,7 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * <ListView dataSource={this.state.dataSource} renderRow={this.renderMovie} style={styles.listView} />
  */
 
 'use strict';
@@ -50,7 +51,10 @@ class AndroidProject extends Component {
 			return this.renderLoadingView();
 		}
 		return (
-			<ListView dataSource={this.state.dataSource} renderRow={this.renderMovie} style={styles.listView} />
+			<Image source={require('./src/images/miao.jpg')} style={styles.thumbnail}>
+				<Text>Hi, I'm a miao.</Text>
+			</Image>
+
 		)
   }
 	renderLoadingView() {
@@ -75,11 +79,12 @@ class AndroidProject extends Component {
 
 const styles = StyleSheet.create({
   container: {
+		padding: 10,
 		flex: 1,
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
+		backgroundColor: '#F5FCFF'
   },
   thumbnail: {
 		width: 53,
