@@ -12,11 +12,10 @@ import {
 export default class MyTouchableOpacity extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {status: 123};
+		this.state = {status: props.text};
 	}
 	customPressHandler = () => {
-		alert('你按下了按钮，当前状态是：' + this.state.status);
-		this.state.status++;
+		alert('你按下了' + this.state.status + '按钮');
 	};
 	render() {
 		const { text } = this.props;
