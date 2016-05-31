@@ -32,7 +32,6 @@ export default class Movie extends Component {
 		this.fetchData();
 	}
 	fetchData() {
-		console.log('a');
 		fetch(REQUEST_URL)
 			.then((response) => response.json())
 			.then((responseData) => {
