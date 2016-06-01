@@ -51,9 +51,15 @@
 
 -keepattributes Signature
 -keepattributes *Annotation*
+<<<<<<< HEAD
 -keep class okhttp3.** { *; }
 -keep interface okhttp3.** { *; }
 -dontwarn okhttp3.**
+=======
+-keep class com.squareup.okhttp.** { *; }
+-keep interface com.squareup.okhttp.** { *; }
+-dontwarn com.squareup.okhttp.**
+>>>>>>> origin/master
 
 # okio
 

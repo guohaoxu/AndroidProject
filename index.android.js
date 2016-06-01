@@ -1,52 +1,57 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * guohaoxu 2016-05-30
  */
-
-import React, { Component } from 'react';
+'use strict';
+import React, {Component} from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+	AppRegistry,
+	StyleSheet,
+	Text,
+	View
 } from 'react-native';
+import MyTouchableOpacity from './src/MyTouchableOpacity';
+import Movie from './src/Movie';
 
 class ReactNativeProject extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<View style={styles.container}>
+				<Text style={styles.title}>
+					Welcome to React Native, show cases!
+				</Text>
+				<Text style={styles.desc}>
+					This is a TouchableOpacity case.
+				</Text>
+				<MyTouchableOpacity text="确定" />
+				<MyTouchableOpacity text="取消" />
+				</* <Movie /> */>
+			</View>
+		)
+	}
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+	container: {
+		flex: 1,
+		justifyContent: 'flex-start',
+		alignItems: 'center',
+		backgroundColor: '#f5f5f5',
+		padding: 20
+	},
+	title: {
+		fontSize: 24,
+		fontWeight: 'bold',
+		color: '#c33'
+	},
+	desc: {
+		fontSize: 14,
+		color: '#999',
+		textAlign: 'center',
+		marginTop: 10
+	},
 });
 
-AppRegistry.registerComponent('ReactNativeProject', () => ReactNativeProject);
+AppRegistry.registerComponent('ReactNativeProject', () => ReactNativeProject)
