@@ -25,9 +25,9 @@ class AndroidProject extends Component {
 				<Text style={styles.desc}>
 					This is a TouchableOpacity case.
 				</Text>
-				<MyTouchableOpacity text="确定2" />
-				<MyTouchableOpacity text="取消2" />
-				<Movie />
+				<MyTouchableOpacity text="确定" />
+				<MyTouchableOpacity text="取消" />
+				</* <Movie /> */>
 			</View>
 		)
 	}
