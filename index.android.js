@@ -11,23 +11,31 @@ import {
 } from 'react-native';
 import MyTouchableOpacity from './src/MyTouchableOpacity';
 import Movie from './src/Movie';
+import AnimatedImage from './src/AnimatedImage';
 
 class ReactNativeProject extends Component {
 	constructor(props) {
 		super(props);
 	}
+//	render() {
+//		return (
+//			<View style={styles.container}>
+//				<Text style={styles.title}>
+//					Welcome to React Native, show cases!
+//				</Text>
+//				<Text style={styles.desc}>
+//					This is a TouchableOpacity case.
+//				</Text>
+//				<MyTouchableOpacity text="确定" />
+//				<MyTouchableOpacity text="取消" />
+//				<Movie />
+//			</View>
+//		)
+//	}
 	render() {
 		return (
-			<View style={styles.container}>
-				<Text style={styles.title}>
-					Welcome to React Native, show cases!
-				</Text>
-				<Text style={styles.desc}>
-					This is a TouchableOpacity case.
-				</Text>
-				<MyTouchableOpacity text="确定" />
-				<MyTouchableOpacity text="取消" />
-				</* <Movie /> */>
+			<View>
+				<AnimatedImage />
 			</View>
 		)
 	}
