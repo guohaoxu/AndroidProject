@@ -7,14 +7,12 @@ import {
 	StyleSheet,
 	Text,
 	TouchableOpacity,
-	StatusBar,
-	View,
-	TextInput
+	View
 } from 'react-native';
 
-import MyTouchableOpacity2 from './MyTouchableOpacity2';
+import Movie from './Movie';
 
-export default class MyTouchableOpacity extends Component {
+export default class MyTouchableOpacity2 extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -23,21 +21,25 @@ export default class MyTouchableOpacity extends Component {
 		let {navigator} = this.props;
 		if (navigator) {
 			navigator.push({
-				name: 'Scene2',
-				component: MyTouchableOpacity2
+				name: 'movie',
+				component: Movie
 			})
+		}
+	}
+	_PressBackHandler() {
+		let {navigator} = this.props;
+		if (navigator) {
+			navigator.pop();
 		}
 	}
 	render() {
 		return (
 			<View>
-			<TextInput
-				style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-				onChangeText={(text) => this.setState({text})}
-				value={this.state.text}
-			/>
 			<TouchableOpacity style={styles.touchable} onPress={this._PressHandler.bind(this)}>
-				<Text style={styles.touchTxt}>确定</Text>
+				<Text style={styles.touchTxt}>点我看电影</Text>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.touchable} onPress={this._PressBackHandler.bind(this)}>
+				<Text style={styles.touchTxt}>点我返回</Text>
 			</TouchableOpacity>
 			</View>
 		)

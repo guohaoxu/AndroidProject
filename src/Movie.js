@@ -9,7 +9,8 @@ import {
   StyleSheet,
   Text,
   View,
-	ListView
+	ListView,
+	TouchableOpacity
 } from 'react-native';
 
 const API_KEY = '7waqfqbprs7pajbz28mqf6vz';
@@ -28,6 +29,12 @@ export default class Movie extends Component {
 			loaded: false
 		};
   }
+	_PressHandler() {
+		let {navigator} = this.props;
+		if (navigator) {
+			navigator.pop();
+		}
+	}
 	componentDidMount() {
 		this.fetchData();
 	}
@@ -47,7 +54,12 @@ export default class Movie extends Component {
 			return this.renderLoadingView();
 		}
 		return (
+			<View>
+			<TouchableOpacity style={styles.touchable} onPress={this._PressHandler.bind(this)}>
+				<Text style={styles.touchTxt}>点我返回</Text>
+			</TouchableOpacity>
 			<ListView dataSource={this.state.dataSource} renderRow={this.renderMovie} style={styles.listView} />
+			</View>
 		)
   }
 	renderLoadingView() {
