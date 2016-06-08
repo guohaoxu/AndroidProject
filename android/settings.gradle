@@ -1,7 +1,3 @@
-<<<<<<< HEAD
 rootProject.name = 'ReactNativeProject'
-=======
-rootProject.name = 'AndroidProject'
->>>>>>> origin/master
 
 include ':app'

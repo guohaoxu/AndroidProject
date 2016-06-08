@@ -1,9 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     package="com.reactnativeproject"
-=======
-    package="com.androidproject"
->>>>>>> origin/master
     android:versionCode="1"
     android:versionName="1.0">
 
