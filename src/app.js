@@ -9,9 +9,6 @@ import {
 	ToolbarAndroid,
 	Text
 } from 'react-native';
-import MyTouchableOpacity from './MyTouchableOpacity';
-import Movie from './Movie';
-import AnimatedImage from './AnimatedImage';
 import MainScene from './MainScene';
 
 export default class ReactNativeProject extends Component {
