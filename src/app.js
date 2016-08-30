@@ -1,5 +1,5 @@
-'use strict';
-import React, {Component} from 'react';
+'use strict'
+import React, {Component} from 'react'
 import {
 	AppRegistry,
 	StyleSheet,
@@ -8,8 +8,8 @@ import {
 	StatusBar,
 	ToolbarAndroid,
 	Text
-} from 'react-native';
-import MainScene from './MainScene';
+} from 'react-native'
+import MainScene from './MainScene'
 
 export default class ReactNativeProject extends Component {
 	render() {

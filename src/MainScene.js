@@ -60,10 +60,10 @@ export default class MainScene extends Component {
 	}
 	renderTopics(topics, sectionID, rowID) {
 		return (
-			<TouchableOpacity style={styles.topics}>
+			<TouchableOpacity style={styles.topics} onPress={() => {this.showDetail(topics.id);}}>
 				<View style={styles.topicsTitle}>
 					<Image source={{uri: topics.author.avatar_url}} style={{width: 40, height: 40, borderRadius: 4}} />
-					<Text style={{fontSize: 16, color: '#333', marginTop: 8, marginLeft: 5}}>{topics.title}</Text>
+					<Text style={{fontSize: 12, color: '#333', marginTop: 8, marginLeft: 5}}>{topics.title}</Text>
 				</View>
 			</TouchableOpacity>
 		);
@@ -77,7 +77,7 @@ export default class MainScene extends Component {
 							<Image source={require('./images/miao.jpg')} style={{width: 80, height: 80, borderRadius: 40}} />
 						</View>
 					</Image>
-					
+
 					<TouchableOpacity style={styles.navViewItem} onPress={() => { this.closeDrawer(); this.fetchData('https://cnodejs.org/api/v1/topics'); this.setState({active: 0}); }}>
 						<Image source={require('./images/list.png')} style={styles.navViewItemIcon} />
 						<Text style={styles.navViewItemTxt}>全部</Text>
@@ -137,13 +137,13 @@ export default class MainScene extends Component {
 							<Image source={require('./images/list_white.png')} style={{width: 20, height: 20}} />
 						</TouchableOpacity>
 						<Text style={{fontSize: 14, color: '#eee'}}>{activeArr[this.state.active]}</Text>
-						<TouchableOpacity style={styles.topbarTouch} onPress={() => {this.showDetail('57563b08c1326f410e9147f5');}}><Text style={{color: '#fff'}}>abc</Text></TouchableOpacity>
+						<TouchableOpacity style={styles.topbarTouch}></TouchableOpacity>
 					</View>
 
 					<ScrollView>
-						<ListView dataSource={this.state.dataSource} renderRow={this.renderTopics} />
+						<ListView dataSource={this.state.dataSource} renderRow={this.renderTopics.bind(this)} />
 					</ScrollView>
-						
+
 				</DrawerLayoutAndroid>
 			</View>
 		);
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
 		height: 44,
 		justifyContent: 'center',
 		alignItems: 'center'
-		
+
 	},
 	navViewItem: {
 		backgroundColor: '#fff',
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
 		paddingTop: 25,
 		paddingLeft: 25
 	},
-	topics: {	
+	topics: {
 		paddingTop: 5,
 		paddingRight: 5,
 		paddingBottom: 5,
